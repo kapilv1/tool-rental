@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "08f380a0-0224-4d2d-a4c9-ed15464b436d",
+		"name": "Tool Rental API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47789672"
+	},
+	"item": [
+		{
+			"name": "List Tools",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tools",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tools"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tool",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tools/LADW",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tools",
+						"LADW"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Tool",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tools?code=NEW1&type=LADDER&brand=Acme",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tools"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "NEW1"
+						},
+						{
+							"key": "type",
+							"value": "LADDER"
+						},
+						{
+							"key": "brand",
+							"value": "Acme"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"toolCode\":\"JAKD\",\"customerName\":\"Prerit Mahajan\",\"rentalDays\":3,\"discountPercent\":10,\"checkoutDate\":\"2025-07-02\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Printable Agreement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/agreement/print?toolCode=LADW&rentalDays=3&discountPercent=10&checkoutDate=2020-07-02&customerName=Prerit Majhajan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"agreement",
+						"print"
+					],
+					"query": [
+						{
+							"key": "toolCode",
+							"value": "LADW"
+						},
+						{
+							"key": "rentalDays",
+							"value": "3"
+						},
+						{
+							"key": "discountPercent",
+							"value": "10"
+						},
+						{
+							"key": "checkoutDate",
+							"value": "2020-07-02"
+						},
+						{
+							"key": "customerName",
+							"value": "Prerit Majhajan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Agreements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/agreements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"agreements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Agreement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/agreements/e7d2e4106-9e68-4682-a499-2bc290a06a2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"agreements",
+						"e7d2e4106-9e68-4682-a499-2bc290a06a2e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "System Holidays",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/system/holidays/2025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"system",
+						"holidays",
+						"2025"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "System Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/system/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"system",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "System Information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/system/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"system",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pricing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pricing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pricing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pricing By Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pricing/LADDER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pricing",
+						"LADDER"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
